@@ -1,0 +1,150 @@
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background-color: black;
+  max-width: 1690px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffef0a;
+  text-decoration: none;
+}
+
+.logo span {
+  color: white;
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-box {
+  position: relative;
+  width: 420px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 40px 10px 40px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  height: 50px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.searchbtn {
+  background-color: #f9e805;
+  border: none;
+  padding: 10px 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  color: black;
+}
+
+.searchbtn:hover {
+  background-color: #e6dc4f;
+  color: #2e7d32;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icon {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  position: relative;
+}
+
+.count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.login-btn {
+  padding: 8px 18px;
+  border: 1px solid #2e7d32;
+  border-radius: 6px;
+  color: black;
+  background: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.login-btn:hover{
+  background-color: #ece586;
+  color: #2e7d32;
+}
+.menu-bar {
+  background-color: #222;
+}
+
+.menu-bar ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+}
+
+.menu-bar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu-bar ul li a:hover {
+  color: rgb(249, 195, 33);
+}
+
+body {
+  padding-top: 120px;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar-center {
+    width: 100%;
+  }
+
+  .menu-bar ul {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
