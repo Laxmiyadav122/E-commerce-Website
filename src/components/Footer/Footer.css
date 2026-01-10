@@ -1,15 +1,21 @@
 .footer {
-    background-color: #111;
-    color: #ddd;
-    margin-top: 80px;
-    font-family: Arial, sans-serif;
-    width: 1700px;
-  }
+  background-color: #111;
+  color: #ddd;
+  margin-top: 80px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
     .footer-top {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
     padding: 60px 80px;
+  }
+  
+  .footer-top {
+    max-width: 1200px;
+    margin: auto;
   }
   
   .footer-col h3 {
