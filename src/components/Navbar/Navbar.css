@@ -3,10 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
+  background: black;
   z-index: 1000;
 }
+
 body {
-  padding-top: 120px; 
+  padding-top: 80px; 
 }
 
 
@@ -113,6 +115,7 @@ body {
 }
 .menu-bar {
   background-color: #222;
+  margin-top: 80px;
 }
 
 .menu-bar ul {
@@ -134,9 +137,6 @@ body {
   color: rgb(249, 195, 33);
 }
 
-body {
-  padding-top: 120px;
-}
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
