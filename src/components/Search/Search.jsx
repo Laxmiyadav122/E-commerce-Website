@@ -22,8 +22,6 @@ const Search = () => {
 
         const data = await res.json();
 
-        console.log("API DATA 👉", data); 
-
         setProducts(data.products || []);
       } catch (error) {
         console.error("Search error:", error);

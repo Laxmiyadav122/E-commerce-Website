@@ -18,9 +18,8 @@ const ProductCard = ({ product }) => {
       className="product-card"
       onMouseEnter={() => setShowDesc(true)}
       onMouseLeave={() => setShowDesc(false)}
-      onClick={() => setShowDesc(!showDesc)} // mobile
+      onClick={() => setShowDesc(!showDesc)} 
     >
-      {/* ❤️ LIKE */}
       <span
         className="like-icon"
         onClick={(e) => {
@@ -33,12 +32,13 @@ const ProductCard = ({ product }) => {
         {isLiked ? "❤️" : "🤍"}
       </span>
 
-      <img src={product.image} alt={product.title} />
+      <div className="product-image">
+        <img src={product.image} alt={product.title} />
+      </div>
 
       <h3>{product.title}</h3>
       <p className="price">₹{product.price}</p>
 
-      {/* 👇 DESCRIPTION */}
       {showDesc && (
         <p className="description">{product.description}</p>
       )}

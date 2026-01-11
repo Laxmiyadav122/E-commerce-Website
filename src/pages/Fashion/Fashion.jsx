@@ -5,7 +5,7 @@ import Fashiondata from "../../data/Fashiondata";
 
 const Fashion = () => {
   return (
-    <div className="home">
+    <div className="Fashion">
       <section className="products">
         <h2>Fashion</h2>
 

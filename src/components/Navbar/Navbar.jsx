@@ -70,10 +70,10 @@ const Navbar = () => {
         <ul>
           <li><Link to="/">All</Link></li>
           <li><Link to="/furniture">Furniture</Link></li>
-          <li><Link to="/Cart">Cart</Link></li>
           <li><Link to="/electronics">Electronics</Link></li>
           <li><Link to="/Fashion">Fashion</Link></li>
           <li><Link to="/Jewellery">Jwellery</Link></li>
+          <li><Link to="/Cart">Cart</Link></li>
           <li><Link to="/faq">FAQ</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>

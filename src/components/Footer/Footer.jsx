@@ -18,22 +18,22 @@ const Footer = () => {
         <div className="footer-col">
           <h3>Quick Links</h3>
           <ul>
-            <li>About Us</li>
+            <li><Link to="/about">About Us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/terms">Terms & Conditions</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h3>Categories</h3>
           <ul>
-            <li>Furniture</li>
-            <li>Fashion</li>
-            <li>Electronics</li>
-            <li>Jewellery</li>
-            <li>Home Decor</li>
+          <li><Link to="/">Home</Link></li>
+            <li><Link to="/furniture">Furniture</Link></li>
+            <li><Link to="/Fashion">Fashion</Link></li>
+            <li><Link to="/electronics">Electronics</Link></li>
+            <li><Link to="/Jewellery">Jwellery</Link></li>
           </ul>
         </div>
 

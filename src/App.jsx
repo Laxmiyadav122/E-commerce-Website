@@ -18,6 +18,9 @@ import Furniture from './pages/Furniture/Furniture';
 import Electronics from './pages/Electronics/Electronics';
 import Fashion from './pages/Fashion/Fashion'
 import Jewellery from './pages/Jewellery/Jewellery'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions/TermsConditions';
+import About from './pages/About/About';
 
 
 function App() {
@@ -50,6 +53,9 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/faq' element={<FAQ/>}/>
         <Route path="/search" element={<Search />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+        <Route path='/terms' element={<TermsConditions/>}/>
+        <Route path='/about' element={<About/>}/>
     </Routes>
     <Footer/>
    </>

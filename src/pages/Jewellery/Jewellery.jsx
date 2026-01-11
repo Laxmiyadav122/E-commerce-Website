@@ -3,9 +3,9 @@ import "./Jewellery.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import jewelleryData from "../../data/JewelleryData";
 
-const Fashion = () => {
+const Jewellery = () => {
   return (
-    <div className="home">
+    <div className="jewellery">
       <section className="products">
         <h2>Jewellery</h2>
 
@@ -19,4 +19,4 @@ const Fashion = () => {
   );
 };
 
-export default Fashion;
+export default Jewellery;

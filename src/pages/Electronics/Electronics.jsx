@@ -5,7 +5,7 @@ import electronicsData from "../../data/Electronicdata";
 
 const Electronics = () => {
   return (
-    <div className="home">
+    <div className="electric">
       <section className="products">
         <h2>Electronic Furniture</h2>
         <div className="product-grid">

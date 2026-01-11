@@ -71,7 +71,6 @@ const FAQ = () => {
             {faq.question}
             <span>{openIndex === index ? "−" : "+"}</span>
           </button>
-
           {openIndex === index && (
             <div className="faq-answer">{faq.answer}</div>
           )}

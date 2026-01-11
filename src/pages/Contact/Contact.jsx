@@ -63,7 +63,7 @@ function Contact() {
         <div className="card">
           <div className="emoji">✉️</div>
           <h3>Email</h3>
-          <p>info@livelihoodcollege.in</p>
+          <p>support@shopsphere.com</p>
         </div>
 
         <div className="card">

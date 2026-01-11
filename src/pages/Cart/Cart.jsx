@@ -6,7 +6,7 @@ const Cart = () => {
   const { cartItems, removeFromCart, updateQty } = useContext(CartContext);
 
   const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.qty,
+    (sum, item) => sum + Number(item.price) * item.qty,
     0
   );
 
@@ -59,8 +59,9 @@ const Cart = () => {
             </div>
 
             <div className="cart-price">
-              ₹{item.price * item.qty}
+              ₹{Number(item.price) * item.qty}
             </div>
+
 
           </div>
         ))}
@@ -69,19 +70,15 @@ const Cart = () => {
       <div className="cart-summary">
         <h3>Price Details</h3>
 
-        <div className="summary-row">
-          <span>Subtotal</span>
-          <span>₹{total}</span>
-        </div>
+        <div className="summary-grid">
+          <div>Subtotal</div>
+          <div>₹{total}</div>
 
-        <div className="summary-row">
-          <span>Delivery</span>
-          <span>Free</span>
-        </div>
+          <div>Delivery</div>
+          <div>Free</div>
 
-        <div className="summary-row total">
-          <span>Total</span>
-          <span>₹{total}</span>
+          <div className="total-label">Total</div>
+          <div className="total-amount">₹{total}</div>
         </div>
 
         <button className="checkout-btn">
