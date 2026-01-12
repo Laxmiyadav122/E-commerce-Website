@@ -21,7 +21,9 @@ import Jewellery from './pages/Jewellery/Jewellery'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions/TermsConditions';
 import About from './pages/About/About';
-
+import Signup from './pages/Signup/Signup';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +40,7 @@ function App() {
   return (
    <>
    <Navbar/>
+   <ToastContainer position="top-right" autoClose={3000} />
    <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/furniture' element={<Furniture/>}/>
@@ -56,6 +59,7 @@ function App() {
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
         <Route path='/terms' element={<TermsConditions/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/signup' element={<Signup/>}/>
     </Routes>
     <Footer/>
    </>

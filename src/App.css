@@ -7,3 +7,16 @@
 body {
   overflow-x: hidden;
 }
+
+
+/* Toast should always stay on top */
+.Toastify__toast-container {
+  z-index: 999999 !important;
+}
+
+/* Toast text sharp rahe */
+.Toastify__toast {
+  backdrop-filter: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}

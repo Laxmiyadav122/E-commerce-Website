@@ -1,8 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Home.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import products from "../../data/Products";
+import { handleSuccess } from '../../utils';
+import { ToastContainer } from 'react-toastify';
 
 const bannerImages = [
   "/image/hear.png",
@@ -15,6 +18,21 @@ const bannerImages = [
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
+
+  const [loggedInUser, setLoggedInUser] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() =>{
+    setLoggedInUser(localStorage.getItem('loggedInUser'))
+  },[]);
+  const handleLogout = (e) => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('loggedInUser');
+    handleSuccess('User Loggedout')
+    setTimeout(() => {
+      navigate('/login');
+    },1000)
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -58,6 +76,11 @@ const Home = () => {
         </div>
       </section>
 
+      <div>
+      <h1>{loggedInUser}</h1>
+      <button onClick={handleLogout}>Logout</button>
+      <ToastContainer/>
+    </div>
     </div>
   );
 };
