@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navbar-left">
           <Link to="/" className="logo">
-            Shop<span>Sphere</span>
+           <img src="/image/logoicon.png" alt="logo" />
           </Link>
         </div>
 

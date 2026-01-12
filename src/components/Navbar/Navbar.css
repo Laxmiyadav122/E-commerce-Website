@@ -57,7 +57,7 @@ body {
 .search-icon {
   position: absolute;
   left: 12px;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
 }
 
@@ -152,3 +152,7 @@ body {
   }
 }
 
+.logo img{
+  height: 80px;
+  border-radius: 10%;
+}
