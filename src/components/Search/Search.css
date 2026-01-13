@@ -15,20 +15,6 @@
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
   }
-  
-  .product-card {
-    border: 1px solid #eee;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    background: #fff;
-  }
-  
-  .product-card img {
-    height: 150px;
-    object-fit: contain;
-  }
-  
   .no-result {
     grid-column: 1/-1;
     text-align: center;

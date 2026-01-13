@@ -1,5 +1,4 @@
 import React from "react";
-import "./Furniture.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import furnitureData from "../../data/Furnituredata"; 
 

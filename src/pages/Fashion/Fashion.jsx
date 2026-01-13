@@ -1,5 +1,4 @@
 import React from "react";
-import "./Fashion.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Fashiondata from "../../data/Fashiondata";
 
