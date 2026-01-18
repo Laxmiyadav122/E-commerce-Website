@@ -1,15 +1,15 @@
 import React from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import jewelleryData from "../../data/JewelleryData";
+import AyurvedaData from "../../data/AyurvedaData";
 
-const Jewellery = () => {
+const Ayurveda = () => {
   return (
     <div className="jewellery">
       <section className="products">
-        <h2>Jewellery</h2>
+        <h2>Herbal & Ayurveda</h2>
 
         <div className="product-grid">
-          {jewelleryData.map((item) => (
+          {AyurvedaData.map((item) => (
             <ProductCard key={item.id} product={item} />
           ))}
         </div>
@@ -18,4 +18,4 @@ const Jewellery = () => {
   );
 };
 
-export default Jewellery;
+export default Ayurveda;

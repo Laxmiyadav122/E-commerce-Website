@@ -1,14 +1,15 @@
 import React from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import furnitureData from "../../data/Furnituredata"; 
+import OrganicBeautydata from "../../data/OrganicBeautydata";
 
-const Furniture = () => {
+const OrganicBeauty = () => {
   return (
-    <div className="furniture">
+    <div className="Fashion">
       <section className="products">
-        <h2>Furnitures</h2>
+        <h2>Organic Beauty</h2>
+
         <div className="product-grid">
-          {furnitureData.map((item) => (
+          {OrganicBeautydata.map((item) => (
             <ProductCard key={item.id} product={item} />
           ))}
         </div>
@@ -17,4 +18,4 @@ const Furniture = () => {
   );
 };
 
-export default Furniture;
+export default OrganicBeauty;

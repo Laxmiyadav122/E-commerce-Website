@@ -7,7 +7,7 @@ const TermsConditions = () => {
       <h1>Terms & Conditions</h1>
 
       <p>
-        Welcome to <strong>OrganicMart</strong>. By accessing or using our
+        Welcome to <strong>GreenCart</strong>. By accessing or using our
         website, you agree to comply with the following terms and conditions.
       </p>
 

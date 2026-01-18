@@ -59,7 +59,8 @@
 
 .add-btn {
   margin-top: 10px;
-  width: 30%;
+  width: 40%;
+  height: auto;
   padding: 8px;
   background: #2e7d32;
   color: #fff;
@@ -67,7 +68,7 @@
   border-radius: 6px;
   cursor: pointer;
   height: 15%;
-  font-size: large;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .add-btn:hover {

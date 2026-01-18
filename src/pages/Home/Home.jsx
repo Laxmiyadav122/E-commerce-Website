@@ -4,16 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import "./Home.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import products from "../../data/Products";
-import { handleSuccess } from '../../utils';
-import { ToastContainer } from 'react-toastify';
+// import { handleSuccess } from '../../utils';
+// import { ToastContainer } from 'react-toastify';
 
 const bannerImages = [
-  "/image/hear.png",
-  "/image/makup.png",
-  "/image/mix.png",
-  "/image/mixpro.png",
-  "/image/brush.png",
-  "/image/face.png",
+  "/image/bag.png",
+  "/image/capsical.png",
+  "/image/forest.png",
+  "/image/hairs.png",
+  "/image/chily.png",
+  "/image/nutural.png",
+  "/image/oil.png",
+  "/image/tomato.png"
 ];
 
 const Home = () => {
@@ -25,14 +27,14 @@ const Home = () => {
   useEffect(() =>{
     setLoggedInUser(localStorage.getItem('loggedInUser'))
   },[]);
-  const handleLogout = (e) => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('loggedInUser');
-    handleSuccess('User Loggedout')
-    setTimeout(() => {
-      navigate('/login');
-    },1000)
-  }
+  // const handleLogout = (e) => {
+  //   localStorage.removeItem('token');
+  //   localStorage.removeItem('loggedInUser');
+  //   handleSuccess('User Loggedout')
+  //   setTimeout(() => {
+  //     navigate('/login');
+  //   },1000)
+  // }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -49,14 +51,14 @@ const Home = () => {
       <section className="hero">
         <img src={bannerImages[current]} alt="banner" />
         <div className="hero-content">
-          <h1>Organic Products</h1>
+          <h1>Healthy Living Starts Here</h1>
           <p>
-            Buy good quility, furnitures and clothes and other thing directly from Us.
+          Fresh, chemical-free organic products directly from trusted farms to your home.
           </p>
         </div>
       </section>
       <section className="products">
-        <h2>Featured Products</h2>
+        <h2>Products</h2>
 
         <div className="product-grid">
           {products.map((item) => (
@@ -66,7 +68,7 @@ const Home = () => {
       </section>
 
       <section className="why-us">
-        <h2>Why Choose OrganicMart?</h2>
+        <h2>Why Choose GreenCart?</h2>
 
         <div className="features">
           <div className="feature">🌱 100% Organic</div>
@@ -76,11 +78,11 @@ const Home = () => {
         </div>
       </section>
 
-      <div>
+      {/* <div>
       <h1>{loggedInUser}</h1>
       <button onClick={handleLogout}>Logout</button>
       <ToastContainer/>
-    </div>
+    </div> */}
     </div>
   );
 };

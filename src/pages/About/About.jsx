@@ -39,7 +39,7 @@ const About = () => {
 
         <div className="about-image">
           <img
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+            src="https://redfernent.com/cdn/shop/articles/Online_shopping_07c7562c-43d3-43d4-918c-de589ad27a7f.jpg?v=1750977231"
             alt="Online shopping"
           />
         </div>

@@ -4,12 +4,13 @@
   }
   
   .about-hero {
-    height: 300px;
+    height: 40vh;
+    width: 100vw;
     background: linear-gradient(
         rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.4)
       ),
-      url("https://images.unsplash.com/photo-1542838132-92c53300491e");
+      url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVGjSYk0H8hRSXqMhzxz1U56aeZfwGYqoFtA&s");
     background-size: cover;
     background-position: center;
     color: white;
@@ -17,6 +18,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    object-fit: cover;
   }
   
   .about-hero h1 {

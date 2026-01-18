@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { useContext } from "react";
 import { WishlistContext } from "../../context/WishlistContext";
 import { CartContext } from "../../context/CartContext";
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
 
   const { wishlist } = useContext(WishlistContext);
   const { cartItems } = useContext(CartContext);
+
+  useEffect(() => {
+    const loggedUser = localStorage.getItem("loggedInUser");
+    if (loggedUser) {
+      setUser(loggedUser);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("loggedInUser");
+    setUser(null);
+    navigate("/login");
+  };
 
   const handleSearch = () => {
     if (searchText.trim() === "") return;
@@ -28,7 +42,7 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navbar-left">
           <Link to="/" className="logo">
-           <img src="/image/logoicon.png" alt="logo" />
+           <img src="/image/logo.png" alt="logo" />
           </Link>
         </div>
 
@@ -59,20 +73,33 @@ const Navbar = () => {
             🛒 <span className="count">{cartItems.length}</span>
           </Link>
 
+           
+          {user && (
+            <div className="user-avatar">
+              {user.charAt(0).toUpperCase()}
+            </div>
+          )}
 
-          <Link to="/login" className="login-btn">
-            Login
-          </Link>
+          {!user ? (
+            <Link to="/login" className="login-btn">
+              Login
+            </Link>
+          ) : (
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
+            
+          )}
         </div>
       </div>
 
       <nav className="menu-bar">
         <ul>
           <li><Link to="/">All</Link></li>
-          <li><Link to="/furniture">Furniture</Link></li>
-          <li><Link to="/electronics">Electronics</Link></li>
-          <li><Link to="/Fashion">Fashion</Link></li>
-          <li><Link to="/Jewellery">Jwellery</Link></li>
+          <li><Link to="/organicFoods">Organic Foods</Link></li>
+          <li><Link to="/FreshProduct">Fresh Produce</Link></li>
+          <li><Link to="/OrganicBeauty">Organic Beauty</Link></li>
+          <li><Link to="/Ayurveda">Herbal & Ayurveda</Link></li>
           <li><Link to="/Cart">Cart</Link></li>
           <li><Link to="/faq">FAQ</Link></li>
           <li><Link to="/contact">Contact</Link></li>

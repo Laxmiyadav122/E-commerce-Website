@@ -14,10 +14,10 @@ import Login from './pages/Login/Login';
 import Contact from './pages/Contact/Contact';
 import FAQ from './pages/FAQ/FAQ';
 import Search from "./components/Search/Search";
-import Furniture from './pages/Furniture/Furniture';
-import Electronics from './pages/Electronics/Electronics';
-import Fashion from './pages/Fashion/Fashion'
-import Jewellery from './pages/Jewellery/Jewellery'
+import OrganicFoods from './pages/OrganicFoods/OrganicFoods';
+import FreshProduct from './pages/FreshProduct/FreshProduct';
+import OrganicBeauty from './pages/OrganicBeauty/OrganicBeauty'
+import Ayurveda from './pages/Ayurveda/Ayurveda'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions/TermsConditions';
 import About from './pages/About/About';
@@ -43,10 +43,10 @@ function App() {
    <ToastContainer position="top-right" autoClose={3000} />
    <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/furniture' element={<Furniture/>}/>
-        <Route path='/electronics' element={<Electronics/>}/>
-        <Route path='/fashion' element={<Fashion/>}/>
-        <Route path='/jewellery' element={<Jewellery/>}/>
+        <Route path='/organicFoods' element={<OrganicFoods/>}/>
+        <Route path='/FreshProduct' element={<FreshProduct/>}/>
+        <Route path='/OrganicBeauty' element={<OrganicBeauty/>}/>
+        <Route path='/Ayurveda' element={<Ayurveda/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/productCard' element={<ProductCard/>} />
         <Route path="/product/:id" element={<ProductDetails />} />

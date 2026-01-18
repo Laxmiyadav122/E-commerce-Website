@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
       <h1>Privacy Policy</h1>
 
       <p>
-        At <strong>ShopSphere</strong>, we value your privacy and are committed
+        At <strong>GreenCart</strong>, we value your privacy and are committed
         to protecting your personal information.
       </p>
 

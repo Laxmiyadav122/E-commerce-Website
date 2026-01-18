@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-col">
           <h2 className="footer-logo">Shop<span>Sphere</span></h2>
           <p>
-            ShopSphere is your one-stop destination for quality products,
+          GreenCart is your one-stop destination for quality products,
             best prices, and trusted service.
           </p>
         </div>
@@ -30,10 +30,10 @@ const Footer = () => {
           <h3>Categories</h3>
           <ul>
           <li><Link to="/">Home</Link></li>
-            <li><Link to="/furniture">Furniture</Link></li>
-            <li><Link to="/Fashion">Fashion</Link></li>
-            <li><Link to="/electronics">Electronics</Link></li>
-            <li><Link to="/Jewellery">Jwellery</Link></li>
+            <li><Link to="/organicFoods">Organic Foods</Link></li>
+            <li><Link to="/OrganicBeauty">Organic Beauty</Link></li>
+            <li><Link to="/FreshProduct">Fresh Produce</Link></li>
+            <li><Link to="/Ayurveda">Herbal & Ayurveda</Link></li>
           </ul>
         </div>
 
@@ -53,7 +53,7 @@ const Footer = () => {
 
       </div>
       <div className="footer-bottom">
-        <p>© 2026 ShopSphere. All Rights Reserved.</p>
+        <p>© 2026 GreenCart. All Rights Reserved.</p>
       </div>
 
     </footer>

@@ -1,15 +1,15 @@
 import React from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import Fashiondata from "../../data/Fashiondata";
+import OrganicFoodsData from "../../data/OrganicFoodsdata"; 
 
-const Fashion = () => {
+const OrganicFoodsdata = () => {
   return (
-    <div className="Fashion">
+    <div className="furniture">
       <section className="products">
-        <h2>Fashion</h2>
-
+        <h2>Organic Foods  
+        </h2>
         <div className="product-grid">
-          {Fashiondata.map((item) => (
+          {OrganicFoodsData.map((item) => (
             <ProductCard key={item.id} product={item} />
           ))}
         </div>
@@ -18,4 +18,4 @@ const Fashion = () => {
   );
 };
 
-export default Fashion;
+export default OrganicFoodsdata;
