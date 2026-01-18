@@ -7,7 +7,6 @@ import Products from './pages/Products/Products';
 import Footer from './components/Footer/Footer';
 import Loader from './components/Loader/Loader';
 import ProductCard from './components/ProductCard/ProductCard';
-import ProductDetails from './pages/ProductDetails/ProductDetails'
 import Cart from './pages/Cart/Cart'
 import Wishlist from './pages/Wishlist/Wishlist'
 import Login from './pages/Login/Login';
@@ -49,7 +48,6 @@ function App() {
         <Route path='/Ayurveda' element={<Ayurveda/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/productCard' element={<ProductCard/>} />
-        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path='/login' element={<Login/>}/>
