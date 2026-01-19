@@ -3,7 +3,6 @@ import './App.css'
 import { Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
-import Products from './pages/Products/Products';
 import Footer from './components/Footer/Footer';
 import Loader from './components/Loader/Loader';
 import ProductCard from './components/ProductCard/ProductCard';
@@ -46,7 +45,6 @@ function App() {
         <Route path='/FreshProduct' element={<FreshProduct/>}/>
         <Route path='/OrganicBeauty' element={<OrganicBeauty/>}/>
         <Route path='/Ayurveda' element={<Ayurveda/>}/>
-        <Route path='/products' element={<Products/>}/>
         <Route path='/productCard' element={<ProductCard/>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
