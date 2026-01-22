@@ -17,28 +17,70 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const newErrors = {};
 
-    if (!form.name) newErrors.name = "Name is required";
-    if (!form.email) newErrors.email = "Email is required";
-    if (!form.phone) newErrors.phone = "Phone is required";
-    if (!form.message) newErrors.message = "Message is required";
+  //   if (!form.name) newErrors.name = "Name is required";
+  //   if (!form.email) newErrors.email = "Email is required";
+  //   if (!form.phone) newErrors.phone = "Phone is required";
+  //   if (!form.message) newErrors.message = "Message is required";
 
-    setErrors(newErrors);
+  //   setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-    }
-  };
+  //   if (Object.keys(newErrors).length === 0) {
+  //     setSubmitted(true);
+  //     setForm({
+  //       name: "",
+  //       email: "",
+  //       phone: "",
+  //       subject: "",
+  //       message: "",
+  //     });
+  //   }
+  // };
+
+
+
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxCc-CHZmtvz57HXURDzVlY3kd7O6wRr8CTeotK6hqE_FU-kvVnSdfMBQxJqA829punow/exec";
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const newErrors = {};
+  if (!form.name) newErrors.name = "Name is required";
+  if (!form.email) newErrors.email = "Email is required";
+  if (!form.phone) newErrors.phone = "Phone is required";
+  if (!form.message) newErrors.message = "Message is required";
+
+  setErrors(newErrors);
+  if (Object.keys(newErrors).length !== 0) return;
+
+  try {
+    const sheetData = new FormData();
+    sheetData.append("type", "Messages");
+    sheetData.append("name", form.name);
+    sheetData.append("email", form.email);
+    sheetData.append("message", form.message);
+
+    await fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      body: sheetData,
+    });
+
+    setSubmitted(true);
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
+  } catch (err) {
+    alert("Failed to send message");
+  }
+};
+
 
   return (
     <div className="contact-container">

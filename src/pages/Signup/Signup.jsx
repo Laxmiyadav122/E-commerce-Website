@@ -17,40 +17,91 @@ function Signup() {
      const {name, value} = e.target;
     setSignupInfo({ ...signupInfo, [name]: value });
   }
-  const handleSignup = async(e) => {
-    e.preventDefault();
-    const {name,email,password} = signupInfo;
-    if(!name || !email || !password){
-      return handleError('name, email and password are required')
-    }
-    try{
-      const url = "https://backend-for-ecommerce.vercel.app/auth/signup";
-      const response = await fetch(url, {
+
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxCc-CHZmtvz57HXURDzVlY3kd7O6wRr8CTeotK6hqE_FU-kvVnSdfMBQxJqA829punow/exec"
+
+  // const handleSignup = async(e) => {
+  //   e.preventDefault();
+  //   const {name,email,password} = signupInfo;
+  //   if(!name || !email || !password){
+  //     return handleError('name, email and password are required')
+  //   }
+  //   try{
+  //     const url = "https://backend-for-ecommerce.vercel.app/auth/signup";
+  //     const response = await fetch(url, {
+  //       method: "POST",
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify(signupInfo)
+  //     });
+  //     const result = await response.json();
+  //     const {success, message} = result;
+  //     if(success){
+  //       handleSuccess(message);
+  //       setTimeout(() => {
+  //         navigate('/login')
+  //       }, 1000)
+  //     }else if(result.error){
+  //       const details = result.error?.details?.[0]?.message;
+  //       handleError(details || message);
+  //     }
+  //     else{
+  //       handleError(message);
+  //     }
+  //   } catch(err){
+  //     handleError(err);
+  //   }
+
+  // }
+
+
+const handleSignup = async (e) => {
+  e.preventDefault();
+  const { name, email, password } = signupInfo;
+
+  if (!name || !email || !password) {
+    return handleError("name, email and password are required");
+  }
+
+  try {
+    // 1️⃣ EXISTING BACKEND CALL (as it is)
+    const backendResponse = await fetch(
+      "https://backend-for-ecommerce.vercel.app/auth/signup",
+      {
         method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(signupInfo)
-      });
-      const result = await response.json();
-      const {success, message} = result;
-      if(success){
-        handleSuccess(message);
-        setTimeout(() => {
-          navigate('/login')
-        }, 1000)
-      }else if(result.error){
-        const details = result.error?.details?.[0]?.message;
-        handleError(details || message);
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(signupInfo),
       }
-      else{
-        handleError(message);
-      }
-    } catch(err){
-      handleError(err);
+    );
+
+    const backendResult = await backendResponse.json();
+    const { success, message } = backendResult;
+
+    if (!success) {
+      return handleError(message);
     }
 
+    // 2️⃣ GOOGLE SHEET CALL (NEW)
+    const sheetData = new FormData();
+    sheetData.append("type", "Users");
+    sheetData.append("name", name);
+    sheetData.append("email", email);
+    sheetData.append("password", password);
+
+    fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      body: sheetData,
+    });
+
+    handleSuccess(message);
+    setTimeout(() => navigate("/login"), 1000);
+
+  } catch (err) {
+    handleError("Something went wrong");
   }
+};
+
   return (
     <div className='container'>
      <h1>Signup</h1>
